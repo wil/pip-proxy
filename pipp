@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+
+import os
+import sys
+
+base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, base)
+from pipproxy.pippatch import main
+main.main()
