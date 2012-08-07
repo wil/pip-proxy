@@ -1,4 +1,4 @@
-
+PIP Proxy (pipproxy) is a WSGI Server that acts as a front end for PIP that caches PyPI index and tarballs.
 
 
 TODO
