@@ -167,7 +167,8 @@ def serve_download(env, package, file):
 URLS = (
     (re.compile(r'^/simple/(?P<package>\w+[\w.\-]+)$'), serve_package_noslash),
     (re.compile(r'^/simple/(?P<package>\w+[\w.\-]+)/$'), serve_package),
-    (re.compile(r'^/simple/(?P<package>\w+[\w.\-]+)/(?P<file>\w+[\w.\-]+\.(%s))$' % ARCHIVE_EXTENSIONS_RE_FRAGMENT),
+    # extension may not be present (most github hosted stuff e.g. "dumbo" module)
+    (re.compile(r'^/simple/(?P<package>\w+[\w.\-]+)/(?P<file>\w+[\w.\-]+(\.(%s))?)$' % ARCHIVE_EXTENSIONS_RE_FRAGMENT),
      serve_download),
 )
 def route(environ):
